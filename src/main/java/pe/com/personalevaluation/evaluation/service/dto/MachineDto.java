@@ -9,6 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Typewriter extends Machine{
-    private String material;
+public abstract class MachineDto {
+    protected String mark;
+    protected String model;
+    protected String year;
+    protected String colour;
+    protected MachineType type;
 }

@@ -9,10 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class Machine {
-    protected String mark;
-    protected String model;
-    protected String year;
-    protected String colour;
-    protected MachineType type;
+public class NotebookDto extends MachineDto {
+    private String processor;
+    private String ram;
+    private String size;
 }

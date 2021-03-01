@@ -9,8 +9,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Computer extends Machine{
-    private String processor;
-    private String ram;
-    private String dimensions;
+public class TypewriterDto extends MachineDto {
+    private String material;
 }
