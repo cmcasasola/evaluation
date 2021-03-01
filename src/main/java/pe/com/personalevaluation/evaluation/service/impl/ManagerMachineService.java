@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono;
 public class ManagerMachineService {
     private final FactoryMachineService factoryMachineService;
 
-    public Mono<MachineDto> create(MachineDto machineDto) {
+    public Mono<MachineDto> save(MachineDto machineDto) {
         MachineService machineService = this.factoryMachineService.get(machineDto.getType());
         return machineService.save(machineDto);
     }

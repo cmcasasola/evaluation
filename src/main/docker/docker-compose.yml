@@ -7,14 +7,15 @@ services:
     hostname: mongo
     environment:
       TZ: UTC # UTC, Europe/Amsterdam, America/Lima
-      MONGO_INITDB_DATABASE: local
-      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_DATABASE: test
+      MONGO_INITDB_ROOT_USERNAME: test
       MONGO_INITDB_ROOT_PASSWORD: password
     ports:
       - 27017:27017
     volumes:
-      - ./files/mongo:/docker-entrypoint-initdb.d:ro
-    command: mongod --bind_ip_all --replSet rs0
+      - ./files/mongo:/docker-entrypoint-initdb.d
+      - ./files/mongo/mongo-init.js
+    command: mongod --bind_ip_all
     networks:
       - local
 
