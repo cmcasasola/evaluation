@@ -17,7 +17,7 @@ import reactor.core.publisher.Mono;
 public class MachineController {
     private final ManagerMachineService managerMachineService;
 
-    @PostMapping("/machines")
+    @PostMapping("/create")
     @ResponseStatus(code = HttpStatus.CREATED)
     public Mono<MachineDto> save(@RequestBody MachineDto machine) {
         return this.managerMachineService.save(machine);
