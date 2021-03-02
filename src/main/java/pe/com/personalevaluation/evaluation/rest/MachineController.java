@@ -18,8 +18,14 @@ public class MachineController {
     private final ManagerMachineService managerMachineService;
 
     @PostMapping("/create")
-    @ResponseStatus(code = HttpStatus.CREATED)
-    public Mono<MachineDto> save(@RequestBody MachineDto machine) {
+    @ResponseStatus(code = HttpStatus.OK)
+    public Mono<MachineDto> create(@RequestBody MachineDto machine) {
         return this.managerMachineService.save(machine);
+    }
+
+    @PostMapping("/read")
+    @ResponseStatus(code = HttpStatus.OK)
+    public Mono<Void> read() {
+        return Mono.fromRunnable(() -> this.managerMachineService.read());
     }
 }
